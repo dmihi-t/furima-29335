@@ -50,11 +50,6 @@ Things you may want to cover:
 | image         | string | null: false |
 | name          | string | null: false |
 | description   | text   | null: false |
-| category      | string | null: false |
-| status        | string | null: false |
-| delivery_fee  | string | null: false |
-| prefecture    | string | null: false |
-| days_shipping | string | null: false |
 | price         | string | null: false |
 | exhibitor     | string | null: false |
 
