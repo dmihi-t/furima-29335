@@ -45,13 +45,13 @@ Things you may want to cover:
 
 ## items テーブル
 
-| Column        | Type   | Options     |
-| ------------- | ------ | ----------- |
-| image         | string | null: false |
-| name          | string | null: false |
-| description   | text   | null: false |
-| price         | string | null: false |
-| exhibitor     | string | null: false |
+| Column        | Type    | Options     |
+| ------------- | ------  | ----------- |
+| image         | string  | null: false |
+| name          | string  | null: false |
+| description   | text    | null: false |
+| price         | integer | null: false |
+| exhibitor     | string  | null: false |
 
 ### Association
 
