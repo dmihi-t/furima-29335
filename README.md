@@ -48,7 +48,7 @@ Things you may want to cover:
 | Column        | Type   | Options     |
 | ------------- | ------ | ----------- |
 | image         | string | null: false |
-| item_name     | string | null: false |
+| name          | string | null: false |
 | description   | string | null: false |
 | category      | string | null: false |
 | status        | string | null: false |
