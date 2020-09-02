@@ -49,7 +49,7 @@ Things you may want to cover:
 | ------------- | ------ | ----------- |
 | image         | string | null: false |
 | name          | string | null: false |
-| description   | string | null: false |
+| description   | text   | null: false |
 | category      | string | null: false |
 | status        | string | null: false |
 | delivery_fee  | string | null: false |
