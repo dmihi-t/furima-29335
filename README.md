@@ -42,7 +42,6 @@ Things you may want to cover:
 
 - has_many :items
 - has_many :orders
-- has_one :credit-card
 
 ## items テーブル
 
@@ -75,20 +74,6 @@ Things you may want to cover:
 
 - belongs_to :user
 - belongs_to :item
-
-## credit-cards テーブル
-
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| number        | string     | null: false                    |
-| deadline      | string     | null: false                    |
-| security_code | string     | null: false                    |
-| user          | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- has_many :orders
 
 ## Shipping_address テーブル
 
