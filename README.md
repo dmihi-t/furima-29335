@@ -73,12 +73,15 @@ Things you may want to cover:
 
 ## Shipping_address テーブル
 
-| Column        | Type   | Options     |
-| ------------- | ------ | ----------- |
-| city          | string | null: false |
-| address       | string | null: false |
-| building_name | string | null: false |
-| phone_number  | string | null: false |
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| postal_code_id | integer    | null: false                    |
+| prefectures_id | integer    | null: false                    |
+| city           | string     | null: false                    |
+| address        | string     | null: false                    |
+| building_name  | string     | null: false                    |
+| phone_number   | string     | null: false                    |
+| odder          | references | null: false, foreign_key: true |
 
 ### Association
 
