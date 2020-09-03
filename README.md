@@ -45,12 +45,13 @@ Things you may want to cover:
 
 ## items テーブル
 
-| Column        | Type    | Options     |
-| ------------- | ------  | ----------- |
-| name          | string  | null: false |
-| description   | text    | null: false |
-| price         | integer | null: false |
-| exhibitor     | string  | null: false |
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| name        | string     | null: false                    |
+| description | text       | null: false                    |
+| price       | integer    | null: false                    |
+| exhibitor   | string     | null: false                    |
+| user        | references | null: false, foreign_key: true |
 
 ### Association
 
