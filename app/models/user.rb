@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :email, presence: true , uniqueness: false , format: {with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i}
   validates :password, presence: true , length: {minimum: 6} , format: {with: /[a-z]{1,}[\d]{1,}/}
   validates :password_confirmation, presence: true
-  validates :date_of_birth, presence: true
+  validates :date_of_birth, prompt: false
 
   with_options format: {with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/} do
     validates :first_name, presence: true
