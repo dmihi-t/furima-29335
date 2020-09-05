@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :name, presence: true
-  validates :email, presence: true , uniqueness: false , format: {with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i}
+  validates :name, presence: true, length: {maximum: 40}
+  validates :email, presence: true , uniqueness: false , format: {with: /.@./}
   validates :password, presence: true , length: {minimum: 6} , format: {with: /[a-z]{1,}[\d]{1,}/}
   validates :password_confirmation, presence: true
   validates :date_of_birth, prompt: false
