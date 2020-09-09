@@ -1,10 +1,9 @@
 document.addEventListener("turbolinks:load", function() {
-  // window.addEventListener('load', function(){
-  const price1 = document.getElementById("item-price")
-  const price2 = document.getElementById("add-tax-price")
-  const price3 = document.getElementById("profit")
-  price1.addEventListener('input', function() {
-  price2.innerHTML = Math.floor((price1.value) * 0.1)
-  price3.innerHTML = Math.floor((price1.value) * 0.9)
+  const price = document.getElementById("item-price")
+  const add_tax_price = document.getElementById("add-tax-price")
+  const profit = document.getElementById("profit")
+  price.addEventListener('input', function() {
+  add_tax_price.innerHTML = Math.floor((price.value) * 0.1)
+  profit.innerHTML = Math.floor((price.value) * 0.9)
   })
 })
