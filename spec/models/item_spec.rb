@@ -6,9 +6,7 @@ describe Item do
   end
 
   describe '商品出品機能について' do
-
     context '商品出品がうまくいくとき' do
-
       it 'すべての項目の入力があれば出品できること' do
         expect(@item).to be_valid
       end
@@ -46,49 +44,49 @@ describe Item do
       it 'categoryを選択していないと出品できないこと' do
         @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category must be other than 1")
+        expect(@item.errors.full_messages).to include('Category must be other than 1')
       end
 
       it 'statusを選択していないと出品できないこと' do
         @item.status_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Status must be other than 1")
+        expect(@item.errors.full_messages).to include('Status must be other than 1')
       end
 
       it 'delivery_feeを選択していないと出品できないこと' do
         @item.delivery_fee_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery fee must be other than 1")
+        expect(@item.errors.full_messages).to include('Delivery fee must be other than 1')
       end
 
       it 'prefectureを選択していないと出品できないこと' do
         @item.prefecture_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefecture must be other than 0")
+        expect(@item.errors.full_messages).to include('Prefecture must be other than 0')
       end
 
       it 'days_shippingを選択していないと出品できないこと' do
         @item.days_shipping_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Days shipping must be other than 1")
+        expect(@item.errors.full_messages).to include('Days shipping must be other than 1')
       end
 
       it 'priceが300円未満設定では出品できないこと' do
         @item.price = 299
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be greater than or equal to 300")
+        expect(@item.errors.full_messages).to include('Price must be greater than or equal to 300')
       end
 
       it 'priceが9999999円を超える設定では出品できないこと' do
-        @item.price = 10000000000000
+        @item.price = 10_000_000_000_000
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be less than or equal to 9999999")
+        expect(@item.errors.full_messages).to include('Price must be less than or equal to 9999999')
       end
-      
+
       it 'priceが半角数字以外では出品できないこと' do
-        @item.price = "５００"
+        @item.price = '５００'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is not a number")
+        expect(@item.errors.full_messages).to include('Price is not a number')
       end
     end
   end
