@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :days_shipping
 
-  validates :name, :description, :category, :status, :delivery_fee, :prefecture, :days_shipping, presence: true
+  validates :name, :image, :description, :category, :status, :delivery_fee, :prefecture, :days_shipping, presence: true
 
   validates :category_id, :status_id, :delivery_fee_id, :prefecture_id, :days_shipping_id, numericality: { other_than: 1 } 
 
