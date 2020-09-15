@@ -9,8 +9,8 @@ class OrderShipping
   validates :phone_number, length: { maximum: 11 }
 
   def save
-    ShippingAddress.create(postal_code: postal_code, prefecture_id: prefecture.id, city: city, address: address, phone_number: phone_number,order_id: order.id)
     Order.create(item_id: @item.id, user_id: @item.user.id, )
+    ShippingAddress.create(postal_code: postal_code, prefecture_id: prefecture.id, city: city, address: address, building_name: building_name, phone_number: phone_number,order_id: order.id)
   end
   
 end
