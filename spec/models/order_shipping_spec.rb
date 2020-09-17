@@ -9,6 +9,16 @@ RSpec.describe OrderShipping, type: :model do
     it 'すべての値が正しく入力されていれば保存できること' do
       expect(@order_shipping).to be_valid
     end
+    it 'cityが空だと保存できないこと' do
+      @order_shipping.city = ""
+      @order_shipping.valid?
+      expect(@order_shipping.errors.full_messages).to include("City can't be blank", "City can't be blank")
+    end
+    it 'addressが空だと保存できないこと' do
+      @order_shipping.address = ""
+      @order_shipping.valid?
+      expect(@order_shipping.errors.full_messages).to include("Address can't be blank", "Address can't be blank")
+    end
     it 'postal_codeが半角のハイフンを含んだ正しい形式でないと保存できないこと' do
       @order_shipping.postal_code = '1234567'
       @order_shipping.valid?
@@ -32,6 +42,11 @@ RSpec.describe OrderShipping, type: :model do
       @order_shipping.phone_number = '012345678912'
       @order_shipping.valid?
       expect(@order_shipping.errors.full_messages).to include('Phone number is too long (maximum is 11 characters)')
+    end
+    it 'phone_numberに-があると保存できないこと' do
+      @order_shipping.phone_number = '01234-8912'
+      @order_shipping.valid?
+      expect(@order_shipping.errors.full_messages).to include('Phone number is invalid. Input half-width characters.')
     end
   end
 end
